@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/media_stateT.qml</file>
+        <file>qml/PopWindow.qml</file>
+        <file>qml/TextScroll.qml</file>
+        <file>qml/PageAudioFrequency.qml</file>
+        <file>qml/PageMenu.qml</file>
+        <file>icon/MtIcon.jpg</file>
+        <file>icon/exit.svg</file>
+        <file>icon/frequency.svg</file>
+        <file>icon/window.svg</file>
+        <file>icon/board.svg</file>
+        <file>icon/start.svg</file>
+    </qresource>
+</RCC>
+
