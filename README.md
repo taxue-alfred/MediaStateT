@@ -1,5 +1,7 @@
 # MediaStateT
 
+#### 仓库现已经转移到Github，Gitee仅作release使用[https://github.com/taxue-alfred/MediaStateT](https://github.com/taxue-alfred/MediaStateT)
+
 #### 特性：
 
 - 从Qt5升级到Qt6+QML混合编程，前后端分离，界面逻辑更清晰， 动画更流畅
