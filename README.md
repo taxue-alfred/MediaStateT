@@ -1,6 +1,10 @@
 # MediaStateT
 
-#### 仓库现已经转移到Github，Gitee仅作release使用[https://github.com/taxue-alfred/MediaStateT](https://github.com/taxue-alfred/MediaStateT)
+#### Github和Gitee同步更新，Github为主仓库，提交ISSUE和requests请到Github
+
+[Github: https://github.com/taxue-alfred/MediaStateT](https://github.com/taxue-alfred/MediaStateT)
+
+[Gitee: https://gitee.com/MediaState/MediaStateT](https://gitee.com/MediaState/MediaStateT)
 
 #### 特性：
 
@@ -11,7 +15,7 @@
 
 - 音乐切歌显示弹窗动画
 
-  ![动画.gif](https://s2.loli.net/2022/01/14/BKi2yHuTq8aoSEl.gif)
+  ![](https://taxue-alfred-1253400076.cos.ap-beijing.myqcloud.com/ShowMediaStateT.gif)
 
 - 实时的音乐频谱与音乐波形显示
 
