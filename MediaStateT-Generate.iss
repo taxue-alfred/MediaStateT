@@ -2,9 +2,9 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "MediaStateT"
-#define MyAppVersion "1.4"
+#define MyAppVersion "1.5"
 #define MyAppPublisher "TaXue"
-#define MyAppURL "https://gitee.com/txwh-media-state/media-state-t"
+#define MyAppURL "https://gitee.com/MediaState/MediaStateT"
 #define MyAppExeName "MediaStateT.exe"
 
 [Setup]
@@ -23,8 +23,8 @@ DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=admin
 OutputDir=D:\Installer
-OutputBaseFilename=MediaStateInstaller-1.4
-SetupIconFile=D:\Photos\Image\az7h7-4zv50-001.ico
+OutputBaseFilename=MediaStateInstaller-1.5
+SetupIconFile=D:\Photography\Image\az7h7-4zv50-001.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -36,10 +36,10 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\Projects\PersonalProject\media-state-t\out\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Projects\PersonalProject\media-state-t\out\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "D:\Projects\PersonalProject\media-state-t\out\audio_sniffer-x64.dll"; DestDir: "{app}"; Flags: ignoreversion regserver
-;Source: "D:\Projects\PersonalProject\media-state-t\out\audio_sniffer-x64.dll"; DestDir: "{app}"; Flags: regtypelib
+Source: "D:\Projects\PersonalProject\MediaStateT\out\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\Projects\PersonalProject\MediaStateT\out\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Projects\PersonalProject\MediaStateT\out\audio_sniffer-x64.dll"; DestDir: "{app}"; Flags: ignoreversion regserver
+;Source: "D:\Projects\PersonalProject\MediaStateT\out\audio_sniffer-x64.dll"; DestDir: "{app}"; Flags: regtypelib
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

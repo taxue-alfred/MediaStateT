@@ -3,6 +3,7 @@ linktarget Qt6::qtquickcontrols2basicstyleplugin
 plugin qtquickcontrols2basicstyleplugin
 classname QtQuickControls2BasicStylePlugin
 typeinfo plugins.qmltypes
+depends QtQuick auto
 prefer :/qt-project.org/imports/QtQuick/Controls/Basic/
 AbstractButton 6.0 AbstractButton.qml
 AbstractButton 2.0 AbstractButton.qml
@@ -119,4 +120,11 @@ Tumbler 6.0 Tumbler.qml
 Tumbler 2.0 Tumbler.qml
 VerticalHeaderView 2.15 VerticalHeaderView.qml
 VerticalHeaderView 6.0 VerticalHeaderView.qml
+singleton Calendar 6.3 Calendar.qml
+CalendarModel 6.3 CalendarModel.qml
+DayOfWeekRow 6.3 DayOfWeekRow.qml
+MonthGrid 6.3 MonthGrid.qml
+WeekNumberColumn 6.3 WeekNumberColumn.qml
+TreeViewDelegate 6.0 TreeViewDelegate.qml
+TreeViewDelegate 2.0 TreeViewDelegate.qml
 

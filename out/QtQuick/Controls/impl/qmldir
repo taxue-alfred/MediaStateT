@@ -4,5 +4,6 @@ optional plugin qtquickcontrols2implplugin
 classname QtQuickControls2ImplPlugin
 typeinfo plugins.qmltypes
 depends QtQuick auto
+depends QtQuick.Templates auto
 prefer :/qt-project.org/imports/QtQuick/Controls/impl/
 

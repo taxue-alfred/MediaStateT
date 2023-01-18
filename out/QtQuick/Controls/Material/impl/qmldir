@@ -3,6 +3,7 @@ linktarget Qt6::qtquickcontrols2materialstyleimplplugin
 plugin qtquickcontrols2materialstyleimplplugin
 classname QtQuickControls2MaterialStyleImplPlugin
 typeinfo plugins.qmltypes
+depends QtQuick auto
 prefer :/qt-project.org/imports/QtQuick/Controls/Material/impl/
 BoxShadow 6.0 BoxShadow.qml
 BoxShadow 2.0 BoxShadow.qml

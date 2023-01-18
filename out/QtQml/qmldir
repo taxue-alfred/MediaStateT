@@ -3,6 +3,7 @@ linktarget Qt6::qmlplugin
 optional plugin qmlplugin
 classname QtQmlPlugin
 designersupported
+system
 typeinfo plugins.qmltypes
 import QtQml.Models auto
 import QtQml.WorkerScript auto

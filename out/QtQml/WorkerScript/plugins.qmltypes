@@ -41,9 +41,6 @@ Module {
             name: "message"
             Parameter { name: "messageObject"; type: "QJSValue" }
         }
-        Method {
-            name: "sendMessage"
-            Parameter { type: "QQmlV4Function"; isPointer: true }
-        }
+        Method { name: "sendMessage"; isJavaScriptFunction: true }
     }
 }

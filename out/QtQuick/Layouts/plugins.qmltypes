@@ -19,9 +19,20 @@ Module {
             "QtQuick.Layouts/ColumnLayout 2.4",
             "QtQuick.Layouts/ColumnLayout 2.7",
             "QtQuick.Layouts/ColumnLayout 2.11",
-            "QtQuick.Layouts/ColumnLayout 6.0"
+            "QtQuick.Layouts/ColumnLayout 6.0",
+            "QtQuick.Layouts/ColumnLayout 6.3"
         ]
-        exportMetaObjectRevisions: [256, 257, 512, 513, 516, 519, 523, 1536]
+        exportMetaObjectRevisions: [
+            256,
+            257,
+            512,
+            513,
+            516,
+            519,
+            523,
+            1536,
+            1539
+        ]
     }
     Component {
         file: "private/qquicklinearlayout_p.h"
@@ -36,9 +47,20 @@ Module {
             "QtQuick.Layouts/GridLayout 2.4",
             "QtQuick.Layouts/GridLayout 2.7",
             "QtQuick.Layouts/GridLayout 2.11",
-            "QtQuick.Layouts/GridLayout 6.0"
+            "QtQuick.Layouts/GridLayout 6.0",
+            "QtQuick.Layouts/GridLayout 6.3"
         ]
-        exportMetaObjectRevisions: [256, 257, 512, 513, 516, 519, 523, 1536]
+        exportMetaObjectRevisions: [
+            256,
+            257,
+            512,
+            513,
+            516,
+            519,
+            523,
+            1536,
+            1539
+        ]
         Enum {
             name: "Flow"
             values: ["LeftToRight", "TopToBottom"]
@@ -119,10 +141,11 @@ Module {
             "QtQuick.Layouts/Layout 2.4",
             "QtQuick.Layouts/Layout 2.7",
             "QtQuick.Layouts/Layout 2.11",
-            "QtQuick.Layouts/Layout 6.0"
+            "QtQuick.Layouts/Layout 6.0",
+            "QtQuick.Layouts/Layout 6.3"
         ]
         isCreatable: false
-        exportMetaObjectRevisions: [256, 512, 513, 516, 519, 523, 1536]
+        exportMetaObjectRevisions: [256, 512, 513, 516, 519, 523, 1536, 1539]
         attachedType: "QQuickLayoutAttached"
         Method { name: "invalidateSenderItem" }
         Method { name: "_q_dumpLayoutTree" }
@@ -316,9 +339,20 @@ Module {
             "QtQuick.Layouts/RowLayout 2.4",
             "QtQuick.Layouts/RowLayout 2.7",
             "QtQuick.Layouts/RowLayout 2.11",
-            "QtQuick.Layouts/RowLayout 6.0"
+            "QtQuick.Layouts/RowLayout 6.0",
+            "QtQuick.Layouts/RowLayout 6.3"
         ]
-        exportMetaObjectRevisions: [256, 257, 512, 513, 516, 519, 523, 1536]
+        exportMetaObjectRevisions: [
+            256,
+            257,
+            512,
+            513,
+            516,
+            519,
+            523,
+            1536,
+            1539
+        ]
     }
     Component {
         file: "private/qquickstacklayout_p.h"
@@ -332,9 +366,10 @@ Module {
             "QtQuick.Layouts/StackLayout 2.4",
             "QtQuick.Layouts/StackLayout 2.7",
             "QtQuick.Layouts/StackLayout 2.11",
-            "QtQuick.Layouts/StackLayout 6.0"
+            "QtQuick.Layouts/StackLayout 6.0",
+            "QtQuick.Layouts/StackLayout 6.3"
         ]
-        exportMetaObjectRevisions: [259, 512, 513, 516, 519, 523, 1536]
+        exportMetaObjectRevisions: [259, 512, 513, 516, 519, 523, 1536, 1539]
         attachedType: "QQuickStackLayoutAttached"
         Property {
             name: "count"

@@ -7,6 +7,101 @@ import QtQuick.tooling 1.2
 
 Module {
     Component {
+        file: "qplatformtheme.h"
+        name: "QPlatformTheme"
+        accessSemantics: "value"
+        Enum {
+            name: "ThemeHint"
+            values: [
+                "CursorFlashTime",
+                "KeyboardInputInterval",
+                "MouseDoubleClickInterval",
+                "StartDragDistance",
+                "StartDragTime",
+                "KeyboardAutoRepeatRate",
+                "PasswordMaskDelay",
+                "StartDragVelocity",
+                "TextCursorWidth",
+                "DropShadow",
+                "MaximumScrollBarDragDistance",
+                "ToolButtonStyle",
+                "ToolBarIconSize",
+                "ItemViewActivateItemOnSingleClick",
+                "SystemIconThemeName",
+                "SystemIconFallbackThemeName",
+                "IconThemeSearchPaths",
+                "StyleNames",
+                "WindowAutoPlacement",
+                "DialogButtonBoxLayout",
+                "DialogButtonBoxButtonsHaveIcons",
+                "UseFullScreenForPopupMenu",
+                "KeyboardScheme",
+                "UiEffects",
+                "SpellCheckUnderlineStyle",
+                "TabFocusBehavior",
+                "IconPixmapSizes",
+                "PasswordMaskCharacter",
+                "DialogSnapToDefaultButton",
+                "ContextMenuOnMouseRelease",
+                "MousePressAndHoldInterval",
+                "MouseDoubleClickDistance",
+                "WheelScrollLines",
+                "TouchDoubleTapDistance",
+                "ShowShortcutsInContextMenus",
+                "IconFallbackSearchPaths",
+                "MouseQuickSelectionThreshold",
+                "InteractiveResizeAcrossScreens",
+                "ShowDirectoriesFirst",
+                "PreselectFirstFileInDirectory",
+                "ButtonPressKeys"
+            ]
+        }
+        Enum {
+            name: "Font"
+            values: [
+                "SystemFont",
+                "MenuFont",
+                "MenuBarFont",
+                "MenuItemFont",
+                "MessageBoxFont",
+                "LabelFont",
+                "TipLabelFont",
+                "StatusBarFont",
+                "TitleBarFont",
+                "MdiSubWindowTitleFont",
+                "DockWidgetTitleFont",
+                "PushButtonFont",
+                "CheckBoxFont",
+                "RadioButtonFont",
+                "ToolButtonFont",
+                "ItemViewFont",
+                "ListViewFont",
+                "HeaderViewFont",
+                "ListBoxFont",
+                "ComboMenuItemFont",
+                "ComboLineEditFont",
+                "SmallFont",
+                "MiniFont",
+                "FixedFont",
+                "GroupBoxTitleFont",
+                "TabButtonFont",
+                "EditorFont",
+                "NFonts"
+            ]
+        }
+    }
+    Component {
+        file: "private/qquickimageselector_p.h"
+        name: "QQuickAnimatedImageSelector"
+        accessSemantics: "reference"
+        prototype: "QQuickImageSelector"
+        exports: [
+            "QtQuick.Controls.impl/AnimatedImageSelector 2.3",
+            "QtQuick.Controls.impl/AnimatedImageSelector 6.0"
+        ]
+        exportMetaObjectRevisions: [515, 1536]
+    }
+    Component {
         file: "private/qquickchecklabel_p.h"
         name: "QQuickCheckLabel"
         accessSemantics: "reference"
@@ -20,7 +115,8 @@ Module {
             "QtQuick.Controls.impl/CheckLabel 2.10",
             "QtQuick.Controls.impl/CheckLabel 2.11",
             "QtQuick.Controls.impl/CheckLabel 6.0",
-            "QtQuick.Controls.impl/CheckLabel 6.2"
+            "QtQuick.Controls.impl/CheckLabel 6.2",
+            "QtQuick.Controls.impl/CheckLabel 6.3"
         ]
         exportMetaObjectRevisions: [
             515,
@@ -31,7 +127,8 @@ Module {
             522,
             523,
             1536,
-            1538
+            1538,
+            1539
         ]
     }
     Component {
@@ -49,7 +146,8 @@ Module {
             "QtQuick.Controls.impl/ClippedText 2.10",
             "QtQuick.Controls.impl/ClippedText 2.11",
             "QtQuick.Controls.impl/ClippedText 6.0",
-            "QtQuick.Controls.impl/ClippedText 6.2"
+            "QtQuick.Controls.impl/ClippedText 6.2",
+            "QtQuick.Controls.impl/ClippedText 6.3"
         ]
         exportMetaObjectRevisions: [
             514,
@@ -61,7 +159,8 @@ Module {
             522,
             523,
             1536,
-            1538
+            1538,
+            1539
         ]
         Property { name: "clipX"; type: "double"; read: "clipX"; write: "setClipX"; index: 0; isFinal: true }
         Property { name: "clipY"; type: "double"; read: "clipY"; write: "setClipY"; index: 1; isFinal: true }
@@ -122,7 +221,8 @@ Module {
             "QtQuick.Controls.impl/ColorImage 2.14",
             "QtQuick.Controls.impl/ColorImage 2.15",
             "QtQuick.Controls.impl/ColorImage 6.0",
-            "QtQuick.Controls.impl/ColorImage 6.2"
+            "QtQuick.Controls.impl/ColorImage 6.2",
+            "QtQuick.Controls.impl/ColorImage 6.3"
         ]
         exportMetaObjectRevisions: [
             515,
@@ -133,7 +233,8 @@ Module {
             526,
             527,
             1536,
-            1538
+            1538,
+            1539
         ]
         Property {
             name: "color"
@@ -170,7 +271,8 @@ Module {
             "QtQuick.Controls.impl/IconImage 2.14",
             "QtQuick.Controls.impl/IconImage 2.15",
             "QtQuick.Controls.impl/IconImage 6.0",
-            "QtQuick.Controls.impl/IconImage 6.2"
+            "QtQuick.Controls.impl/IconImage 6.2",
+            "QtQuick.Controls.impl/IconImage 6.3"
         ]
         exportMetaObjectRevisions: [
             515,
@@ -181,7 +283,8 @@ Module {
             526,
             527,
             1536,
-            1538
+            1538,
+            1539
         ]
         Property {
             name: "name"
@@ -216,9 +319,10 @@ Module {
             "QtQuick.Controls.impl/IconLabel 2.4",
             "QtQuick.Controls.impl/IconLabel 2.7",
             "QtQuick.Controls.impl/IconLabel 2.11",
-            "QtQuick.Controls.impl/IconLabel 6.0"
+            "QtQuick.Controls.impl/IconLabel 6.0",
+            "QtQuick.Controls.impl/IconLabel 6.3"
         ]
-        exportMetaObjectRevisions: [515, 516, 519, 523, 1536]
+        exportMetaObjectRevisions: [515, 516, 519, 523, 1536, 1539]
         Enum {
             name: "Display"
             values: [
@@ -298,6 +402,47 @@ Module {
         }
     }
     Component {
+        file: "private/qquickimageselector_p.h"
+        name: "QQuickImageSelector"
+        accessSemantics: "reference"
+        prototype: "QObject"
+        interfaces: ["QQmlParserStatus", "QQmlPropertyValueInterceptor"]
+        exports: [
+            "QtQuick.Controls.impl/ImageSelector 2.3",
+            "QtQuick.Controls.impl/ImageSelector 6.0"
+        ]
+        exportMetaObjectRevisions: [515, 1536]
+        Property {
+            name: "source"
+            type: "QUrl"
+            read: "source"
+            notify: "sourceChanged"
+            index: 0
+            isReadonly: true
+            isFinal: true
+        }
+        Property { name: "name"; type: "QString"; read: "name"; write: "setName"; index: 1; isFinal: true }
+        Property { name: "path"; type: "QString"; read: "path"; write: "setPath"; index: 2; isFinal: true }
+        Property {
+            name: "states"
+            type: "QVariantList"
+            read: "states"
+            write: "setStates"
+            index: 3
+            isFinal: true
+        }
+        Property {
+            name: "separator"
+            type: "QString"
+            read: "separator"
+            write: "setSeparator"
+            index: 4
+            isFinal: true
+        }
+        Property { name: "cache"; type: "bool"; read: "cache"; write: "setCache"; index: 5; isFinal: true }
+        Signal { name: "sourceChanged" }
+    }
+    Component {
         file: "private/qquickitemgroup_p.h"
         name: "QQuickItemGroup"
         accessSemantics: "reference"
@@ -308,9 +453,10 @@ Module {
             "QtQuick.Controls.impl/ItemGroup 2.7",
             "QtQuick.Controls.impl/ItemGroup 2.11",
             "QtQuick.Controls.impl/ItemGroup 6.0",
-            "QtQuick.Controls.impl/ItemGroup 6.2"
+            "QtQuick.Controls.impl/ItemGroup 6.2",
+            "QtQuick.Controls.impl/ItemGroup 6.3"
         ]
-        exportMetaObjectRevisions: [514, 516, 519, 523, 1536, 1538]
+        exportMetaObjectRevisions: [514, 516, 519, 523, 1536, 1538, 1539]
     }
     Component {
         file: "private/qquickmnemoniclabel_p.h"
@@ -326,7 +472,8 @@ Module {
             "QtQuick.Controls.impl/MnemonicLabel 2.10",
             "QtQuick.Controls.impl/MnemonicLabel 2.11",
             "QtQuick.Controls.impl/MnemonicLabel 6.0",
-            "QtQuick.Controls.impl/MnemonicLabel 6.2"
+            "QtQuick.Controls.impl/MnemonicLabel 6.2",
+            "QtQuick.Controls.impl/MnemonicLabel 6.3"
         ]
         exportMetaObjectRevisions: [
             515,
@@ -337,7 +484,8 @@ Module {
             522,
             523,
             1536,
-            1538
+            1538,
+            1539
         ]
         Property { name: "text"; type: "QString"; read: "text"; write: "setText"; index: 0; isFinal: true }
         Property {
@@ -348,6 +496,127 @@ Module {
             index: 1
             isFinal: true
         }
+    }
+    Component {
+        file: "private/qquickninepatchimage_p.h"
+        name: "QQuickNinePatchImage"
+        accessSemantics: "reference"
+        prototype: "QQuickImage"
+        exports: [
+            "QtQuick.Controls.impl/NinePatchImage 2.3",
+            "QtQuick.Controls.impl/NinePatchImage 2.4",
+            "QtQuick.Controls.impl/NinePatchImage 2.5",
+            "QtQuick.Controls.impl/NinePatchImage 2.7",
+            "QtQuick.Controls.impl/NinePatchImage 2.11",
+            "QtQuick.Controls.impl/NinePatchImage 2.14",
+            "QtQuick.Controls.impl/NinePatchImage 2.15",
+            "QtQuick.Controls.impl/NinePatchImage 6.0",
+            "QtQuick.Controls.impl/NinePatchImage 6.2",
+            "QtQuick.Controls.impl/NinePatchImage 6.3"
+        ]
+        exportMetaObjectRevisions: [
+            515,
+            516,
+            517,
+            519,
+            523,
+            526,
+            527,
+            1536,
+            1538,
+            1539
+        ]
+        Property {
+            name: "topPadding"
+            type: "double"
+            read: "topPadding"
+            notify: "topPaddingChanged"
+            index: 0
+            isReadonly: true
+            isFinal: true
+        }
+        Property {
+            name: "leftPadding"
+            type: "double"
+            read: "leftPadding"
+            notify: "leftPaddingChanged"
+            index: 1
+            isReadonly: true
+            isFinal: true
+        }
+        Property {
+            name: "rightPadding"
+            type: "double"
+            read: "rightPadding"
+            notify: "rightPaddingChanged"
+            index: 2
+            isReadonly: true
+            isFinal: true
+        }
+        Property {
+            name: "bottomPadding"
+            type: "double"
+            read: "bottomPadding"
+            notify: "bottomPaddingChanged"
+            index: 3
+            isReadonly: true
+            isFinal: true
+        }
+        Property {
+            name: "topInset"
+            type: "double"
+            read: "topInset"
+            notify: "topInsetChanged"
+            index: 4
+            isReadonly: true
+            isFinal: true
+        }
+        Property {
+            name: "leftInset"
+            type: "double"
+            read: "leftInset"
+            notify: "leftInsetChanged"
+            index: 5
+            isReadonly: true
+            isFinal: true
+        }
+        Property {
+            name: "rightInset"
+            type: "double"
+            read: "rightInset"
+            notify: "rightInsetChanged"
+            index: 6
+            isReadonly: true
+            isFinal: true
+        }
+        Property {
+            name: "bottomInset"
+            type: "double"
+            read: "bottomInset"
+            notify: "bottomInsetChanged"
+            index: 7
+            isReadonly: true
+            isFinal: true
+        }
+        Signal { name: "topPaddingChanged" }
+        Signal { name: "leftPaddingChanged" }
+        Signal { name: "rightPaddingChanged" }
+        Signal { name: "bottomPaddingChanged" }
+        Signal { name: "topInsetChanged" }
+        Signal { name: "leftInsetChanged" }
+        Signal { name: "rightInsetChanged" }
+        Signal { name: "bottomInsetChanged" }
+    }
+    Component {
+        file: "private/qquickimageselector_p.h"
+        name: "QQuickNinePatchImageSelector"
+        accessSemantics: "reference"
+        prototype: "QQuickImageSelector"
+        exports: [
+            "QtQuick.Controls.impl/NinePatchImageSelector 2.3",
+            "QtQuick.Controls.impl/NinePatchImageSelector 6.0"
+        ]
+        exportMetaObjectRevisions: [515, 1536]
     }
     Component {
         file: "private/qquickoverlay_p.h"
@@ -402,10 +671,11 @@ Module {
             "QtQuick.Controls.impl/Overlay 2.4",
             "QtQuick.Controls.impl/Overlay 2.7",
             "QtQuick.Controls.impl/Overlay 2.11",
-            "QtQuick.Controls.impl/Overlay 6.0"
+            "QtQuick.Controls.impl/Overlay 6.0",
+            "QtQuick.Controls.impl/Overlay 6.3"
         ]
         isCreatable: false
-        exportMetaObjectRevisions: [515, 516, 519, 523, 1536]
+        exportMetaObjectRevisions: [515, 516, 519, 523, 1536, 1539]
         attachedType: "QQuickOverlayAttached"
         Property {
             name: "modal"
@@ -443,9 +713,10 @@ Module {
             "QtQuick.Controls.impl/PaddedRectangle 2.4",
             "QtQuick.Controls.impl/PaddedRectangle 2.7",
             "QtQuick.Controls.impl/PaddedRectangle 2.11",
-            "QtQuick.Controls.impl/PaddedRectangle 6.0"
+            "QtQuick.Controls.impl/PaddedRectangle 6.0",
+            "QtQuick.Controls.impl/PaddedRectangle 6.3"
         ]
-        exportMetaObjectRevisions: [512, 513, 516, 519, 523, 1536]
+        exportMetaObjectRevisions: [512, 513, 516, 519, 523, 1536, 1539]
         Property {
             name: "padding"
             type: "double"
@@ -512,7 +783,8 @@ Module {
             "QtQuick.Controls.impl/PlaceholderText 2.10",
             "QtQuick.Controls.impl/PlaceholderText 2.11",
             "QtQuick.Controls.impl/PlaceholderText 6.0",
-            "QtQuick.Controls.impl/PlaceholderText 6.2"
+            "QtQuick.Controls.impl/PlaceholderText 6.2",
+            "QtQuick.Controls.impl/PlaceholderText 6.3"
         ]
         exportMetaObjectRevisions: [
             514,
@@ -524,9 +796,27 @@ Module {
             522,
             523,
             1536,
-            1538
+            1538,
+            1539
         ]
         Method { name: "updateAlignment" }
+    }
+    Component {
+        file: "private/qquickplatformtheme_p.h"
+        name: "QQuickPlatformTheme"
+        accessSemantics: "reference"
+        prototype: "QObject"
+        extension: "QPlatformTheme"
+        extensionIsNamespace: true
+        exports: ["QtQuick.Controls.impl/PlatformTheme 6.3"]
+        isCreatable: false
+        isSingleton: true
+        exportMetaObjectRevisions: [1539]
+        Method {
+            name: "themeHint"
+            type: "QVariant"
+            Parameter { name: "themeHint"; type: "QPlatformTheme::ThemeHint" }
+        }
     }
     Component {
         file: "private/qtquickcontrols2foreign_p.h"
@@ -566,6 +856,7 @@ Module {
         name: "QQuickText"
         accessSemantics: "reference"
         prototype: "QQuickImplicitSizeItem"
+        interfaces: ["QQuickTextInterface"]
         Enum {
             name: "HAlignment"
             values: [
@@ -1020,9 +1311,10 @@ Module {
             "QtQuick.Controls.impl/TumblerView 2.4",
             "QtQuick.Controls.impl/TumblerView 2.7",
             "QtQuick.Controls.impl/TumblerView 2.11",
-            "QtQuick.Controls.impl/TumblerView 6.0"
+            "QtQuick.Controls.impl/TumblerView 6.0",
+            "QtQuick.Controls.impl/TumblerView 6.3"
         ]
-        exportMetaObjectRevisions: [513, 516, 519, 523, 1536]
+        exportMetaObjectRevisions: [513, 516, 519, 523, 1536, 1539]
         Property {
             name: "model"
             type: "QVariant"

@@ -19,11 +19,12 @@ Module {
         prototype: "QQuickAttachedObject"
         exports: [
             "QtQuick.Controls.Material/Material 2.0",
+            "QtQuick.Controls.Material/Material 2.15",
             "QtQuick.Controls.Material/Material 6.0",
             "QtQuick.Controls.Material/Material 6.2"
         ]
         isCreatable: false
-        exportMetaObjectRevisions: [512, 1536, 1538]
+        exportMetaObjectRevisions: [512, 527, 1536, 1538]
         attachedType: "QQuickMaterialStyle"
         Enum {
             name: "Theme"
@@ -447,7 +448,7 @@ Module {
         }
         Property {
             name: "sliderDisabledColor"
-            revision: 65295
+            revision: 527
             type: "QColor"
             read: "sliderDisabledColor"
             notify: "themeChanged"

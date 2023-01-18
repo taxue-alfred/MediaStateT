@@ -4,6 +4,7 @@ plugin qtquickcontrols2materialstyleplugin
 classname QtQuickControls2MaterialStylePlugin
 typeinfo plugins.qmltypes
 import QtQuick.Controls.Basic auto
+depends QtQuick auto
 prefer :/qt-project.org/imports/QtQuick/Controls/Material/
 ApplicationWindow 6.0 ApplicationWindow.qml
 ApplicationWindow 2.0 ApplicationWindow.qml
@@ -105,6 +106,8 @@ ToolSeparator 2.1 ToolSeparator.qml
 ToolSeparator 6.0 ToolSeparator.qml
 ToolTip 6.0 ToolTip.qml
 ToolTip 2.0 ToolTip.qml
+TreeViewDelegate 6.0 TreeViewDelegate.qml
+TreeViewDelegate 2.0 TreeViewDelegate.qml
 Tumbler 6.0 Tumbler.qml
 Tumbler 2.0 Tumbler.qml
 VerticalHeaderView 2.15 VerticalHeaderView.qml

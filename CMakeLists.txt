@@ -11,7 +11,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 #设置qt的cmake编译目录，包含了qt模块编译需要的cmake文件
-set(CMAKE_PREFIX_PATH "D:/Qt/6.2.4/mingw_64")
+set(CMAKE_PREFIX_PATH "D:/Qt/6.4.1/mingw_64")
 
 find_package(Qt6 COMPONENTS
         Core
