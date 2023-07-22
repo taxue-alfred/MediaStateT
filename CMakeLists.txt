@@ -44,6 +44,7 @@ set(RESOURCE_FILES qml/media_stateT.qml qml/PopWindow.qml qml/TextScroll.qml
 set(QRC_FILES media_stateT.qrc src/MtMediaInfo.cpp include/MtMediaInfo.h
         Libraries/PersonalLibraries/FileBasicInformation/FileBasicInformation.cpp
         Libraries/PersonalLibraries/Netease_Music_info/Netease_Music_info.cpp
+        Libraries/PersonalLibraries/QQ_Music_info/QQ_Music_info.cpp
         Libraries/PersonalLibraries/StartWithSystem/StartWithSystem.cpp
         Libraries/PersonalLibraries/StartWithSystem/include/StartWithSystem.h
         Libraries/QHotkey/QHotkey/qhotkey.cpp

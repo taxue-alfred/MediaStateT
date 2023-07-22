@@ -25,6 +25,7 @@ public:
     Netease_Music_info * neteaseMusicInfo = nullptr;
     FileBasicInformation * fileBasicInfo = nullptr;
     StartWithSystem * startWithSystem = nullptr;
+    std::string playApp = "NetEaseMusic";  //默认为QQ音乐，可选NetEaseMusic
 
 private:
     QHotkey * hotkey1 = nullptr;

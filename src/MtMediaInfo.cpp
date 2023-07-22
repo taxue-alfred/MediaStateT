@@ -9,9 +9,14 @@ MtMediaInfo::MtMediaInfo(QObject * parent) : QObject(parent){
     fileBasicInfo = new FileBasicInformation;
     startWithSystem = new StartWithSystem;
 
-    std::string copy_file_path = "./NE_history.json";
-    neteaseMusicInfo->NE_Copy_InfoFile(NE_path_get(), copy_file_path);
-    neteaseMusicInfo->GetInfoContent(copy_file_path);
+    if (playApp == "NetEaseMusic"){
+        std::string copy_file_path = "./NE_history.json";
+        neteaseMusicInfo->NE_Copy_InfoFile(NE_path_get(), copy_file_path);
+        neteaseMusicInfo->GetInfoContent(copy_file_path);
+    }else if (playApp == "qqMusic"){
+
+    }
+
     //添加Hotkey
     if (!hotkey1){
         hotkey1 = new QHotkey(QKeySequence("Ctrl+1"), true);
@@ -41,20 +46,32 @@ std::string MtMediaInfo::AppPath_get() {
 }
 
 void MtMediaInfo::music_info_get() {
-    //这里music_info和player_info一般情况下是一起使用的，所以这里复制文件解析json后player_info_get()直接用
-    std::string copy_file_path = "./NE_history.json";
-    neteaseMusicInfo->NE_Copy_InfoFile(NE_path_get(), copy_file_path);
-    neteaseMusicInfo->GetInfoContent(copy_file_path);
-    emit music_info_got(QString::fromStdString(neteaseMusicInfo->music_name));
+    if (playApp == "NetEaseMusic"){
+        //这里music_info和player_info一般情况下是一起使用的，所以这里复制文件解析json后player_info_get()直接用
+        std::string copy_file_path = "./NE_history.json";
+        neteaseMusicInfo->NE_Copy_InfoFile(NE_path_get(), copy_file_path);
+        neteaseMusicInfo->GetInfoContent(copy_file_path);
+        emit music_info_got(QString::fromStdString(neteaseMusicInfo->music_name));
+    }else if (playApp == "qqMusic"){
+
+    }
 }
 
 void MtMediaInfo::img_download() {
     std::string imgPath = "./album.jpg";
-    neteaseMusicInfo->GetAlbumPhoto(neteaseMusicInfo->album_picUrl,imgPath);
+    if (playApp == "NetEaseMusic"){
+        neteaseMusicInfo->GetAlbumPhoto(neteaseMusicInfo->album_picUrl,imgPath);
+    }else if (playApp == "qqMusic"){
+
+    }
 }
 
 void MtMediaInfo::player_info_get() {
-    emit player_info_got(QString::fromStdString(neteaseMusicInfo->artists_name));
+    if (playApp == "NetEaseMusic"){
+        emit player_info_got(QString::fromStdString(neteaseMusicInfo->artists_name));
+    }else if (playApp == "qqMusic"){
+
+    }
 }
 
 void MtMediaInfo::NE_file_time() {
