@@ -29,7 +29,7 @@
 
 #### 使用介绍：
 
-1. 配置文件介绍(config.txt)：
+1. 配置文件介绍(net_config.txt)：
    - 第一行为MediaStateBoard IP地址，MediaStateBoard连接后会在主屏幕显示IP地址（获得到IP地址需要自行修改配置文件）
    - 第二行为MediaStateBoard通信的端口（一般不需要更改，如果发现端口占用则需要进行修改）
 
