@@ -32,10 +32,10 @@ void MtBoardConnect::init() {
 }
 
 void MtBoardConnect::getConfig(std::string & IP, uint16_t & port) {
-    std::ifstream configFile("config.txt", std::ios::in);
+    std::ifstream configFile("net_config.txt", std::ios::in);
     if (!configFile.is_open())
     {
-        std::cout << "读取配置文件失败！请检查config.txt" << std::endl;
+        std::cout << "读取配置文件失败！请检查net_config.txt" << std::endl;
         return;
     }
     std::string port_str;
