@@ -8,11 +8,15 @@ MtMediaInfo::MtMediaInfo(QObject * parent) : QObject(parent){
     neteaseMusicInfo = new Netease_Music_info;
     fileBasicInfo = new FileBasicInformation;
     startWithSystem = new StartWithSystem;
+    ne_fileSystemWatcher = new QFileSystemWatcher;
 
     if (playApp == "NetEaseMusic"){
         std::string copy_file_path = "./NE_history.json";
         neteaseMusicInfo->NE_Copy_InfoFile(NE_path_get(), copy_file_path);
         neteaseMusicInfo->GetInfoContent(copy_file_path);
+        ne_fileSystemWatcher->addPath(QString::fromStdString(NE_path_get()));
+        connect(ne_fileSystemWatcher, SIGNAL(fileChanged(QString)),
+                this, SLOT(ne_file_changed(QString)));
     }else if (playApp == "qqMusic"){
 
     }
@@ -62,7 +66,6 @@ void MtMediaInfo::img_download() {
     if (playApp == "NetEaseMusic"){
         neteaseMusicInfo->GetAlbumPhoto(neteaseMusicInfo->album_picUrl,imgPath);
     }else if (playApp == "qqMusic"){
-
     }
 }
 
@@ -74,7 +77,11 @@ void MtMediaInfo::player_info_get() {
     }
 }
 
-void MtMediaInfo::NE_file_time() {
+void MtMediaInfo::ne_file_changed(const QString & path){
+    std::string copy_file_path = "./NE_history.json";
+    neteaseMusicInfo->NE_Copy_InfoFile(NE_path_get(), copy_file_path);
+    neteaseMusicInfo->GetInfoContent(copy_file_path);
+    printf("File changed triggered:%s\n", path.toStdString().c_str());
     int64_t temp_time = fileBasicInfo->get_modificationTime(NE_path_get().c_str());
     emit ne_file_time_got(QString::number(temp_time));
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="QtSettings">
+    <option name="myCurrentProfile" value="Release-MinGW-Qt" />
+    <option name="mySettingsPerProfile">
+      <map>
+        <entry key="Release-MinGW-Qt">
+          <value>
+            <PerProfileState>
+              <option name="myQmlPath" value="E:/Qt/6.6.1/mingw_64/./qml" />
+              <option name="myQtBinPath" value="E:/Qt/6.6.1/mingw_64/bin" />
+            </PerProfileState>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

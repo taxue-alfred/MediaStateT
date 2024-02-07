@@ -11,13 +11,15 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 #设置qt的cmake编译目录，包含了qt模块编译需要的cmake文件
-set(CMAKE_PREFIX_PATH "D:/Qt/6.4.1/mingw_64")
+set(CMAKE_PREFIX_PATH "E:/Qt/6.6.1/mingw_64")
 
 find_package(Qt6 COMPONENTS
         Core
         Gui
         Widgets
         Quick
+        Svg
+        Xml
         REQUIRED)
 
 #设置第三方头文件路径
@@ -66,14 +68,16 @@ set(QRC_FILES media_stateT.qrc src/MtMediaInfo.cpp include/MtMediaInfo.h
         include/WindowCompositionAttribute.h)
 set(OTHER_FILES icon/icon_setting.rc)
 # 加入WIN32取消显示console
-add_executable(MediaStateT WIN32
+add_executable(MediaStateT
         ${SOURCE_FILES} ${RESOURCE_FILES} ${QRC_FILES} ${OTHER_FILES})
 
 target_link_libraries(MediaStateT
-        Qt::Core
-        Qt::Gui
-        Qt::Widgets
-        Qt::Quick
+        Qt6::Core
+        Qt6::Gui
+        Qt6::Widgets
+        Qt6::Quick
+        Qt6::Svg
+        Qt6::Xml
         )
 target_link_libraries(MediaStateT libcurl)
 target_link_libraries(MediaStateT avcodec avdevice avfilter

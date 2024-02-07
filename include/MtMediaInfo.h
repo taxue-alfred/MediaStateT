@@ -8,13 +8,14 @@
 #include <iostream>
 #include <winsock2.h>
 #include <windows.h>
-#include <stdio.h>
+#include <cstdio>
 #include <QCoreApplication.h>
 
 #include "Netease_Music_info.h"
 #include "FileBasicInformation.h"
 #include "StartWithSystem.h"
 #include "qhotkey.h"
+#include "QFileSystemWatcher"
 
 #include "AudioSource.h"
 
@@ -31,6 +32,7 @@ private:
     QHotkey * hotkey1 = nullptr;
     QHotkey * hotkey2 = nullptr;
     QHotkey * hotkey3 = nullptr;
+    QFileSystemWatcher * ne_fileSystemWatcher = nullptr;
 
 public:
     MtMediaInfo(QObject * parent = nullptr);
@@ -66,7 +68,7 @@ public slots:
     void get_mouse_cursor();
 
 public slots:
-    void NE_file_time();
+    void ne_file_changed(const QString & path);
 
 private:
     std::string NE_path_get();

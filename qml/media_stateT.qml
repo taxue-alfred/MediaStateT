@@ -112,23 +112,17 @@ Item{
             //获取信息类，这是一个C++类
             MT_info_get{
                 id:mt_info_get
-                //存储上一次的history时间信息，用string是为了防止数字过大造成溢出
-                property string last_file_time;
-                //这边从C++传来的值进行赋值的时候需要写function()
                 //这里QT6和Qt5的Quick有些不同
                 //这样子加个function可以很明显的标识这是由emit传来的signal的参数
                 //详细链接可以参考这个： https://www.direktembedded.com/qt5-to-qt6-qml-pyside-porting/
                 onNe_file_time_got:
-                    function(temp_time){
-                        if(temp_time != last_file_time){
-                            //获取信息
-                            mt_info_get.music_info_get()
-                            mt_info_get.player_info_get()
-                            mt_info_get.img_download()
-                            //显示窗口
-                            pop_window.showWindow()
-                            last_file_time = temp_time
-                    }
+                    function(){
+                        //获取信息
+                        mt_info_get.music_info_get()
+                        mt_info_get.player_info_get()
+                        mt_info_get.img_download()
+                        //显示窗口
+                        pop_window.showWindow()
                 }
 
                 onMusic_info_got:
@@ -182,16 +176,6 @@ Item{
                 //获取网易云音乐history的修改时间函数
                 function ne_file_time(){
                     mt_info_get.NE_file_time()
-                }
-            }
-
-            // 循环更新网易云歌曲等参数
-            Timer{
-                interval:500
-                repeat:true
-                running:true
-                onTriggered:{
-                    mt_info_get.ne_file_time();
                 }
             }
 

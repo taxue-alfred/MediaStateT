@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <iostream>
+#include <cstdint>
 
 #ifndef WIN32
 #include <unistd.h>
