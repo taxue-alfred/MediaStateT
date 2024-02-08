@@ -20,6 +20,7 @@ find_package(Qt6 COMPONENTS
         Quick
         Svg
         Xml
+        Charts
         REQUIRED)
 
 #设置第三方头文件路径
@@ -44,7 +45,6 @@ set(SOURCE_FILES src/main.cpp)
 set(RESOURCE_FILES qml/media_stateT.qml qml/PopWindow.qml qml/TextScroll.qml
         qml/PageAudioFrequency.qml qml/PageMenu.qml)
 set(QRC_FILES media_stateT.qrc src/MtMediaInfo.cpp include/MtMediaInfo.h
-        Libraries/PersonalLibraries/FileBasicInformation/FileBasicInformation.cpp
         Libraries/PersonalLibraries/Netease_Music_info/Netease_Music_info.cpp
         Libraries/PersonalLibraries/QQ_Music_info/QQ_Music_info.cpp
         Libraries/PersonalLibraries/StartWithSystem/StartWithSystem.cpp
@@ -67,9 +67,14 @@ set(QRC_FILES media_stateT.qrc src/MtMediaInfo.cpp include/MtMediaInfo.h
         include/Acrylic.h
         include/WindowCompositionAttribute.h)
 set(OTHER_FILES icon/icon_setting.rc)
+
 # 加入WIN32取消显示console
 add_executable(MediaStateT
         ${SOURCE_FILES} ${RESOURCE_FILES} ${QRC_FILES} ${OTHER_FILES})
+
+set_target_properties(MediaStateT PROPERTIES
+        WIN32_EXECUTABLE TRUE
+)
 
 target_link_libraries(MediaStateT
         Qt6::Core
@@ -78,6 +83,7 @@ target_link_libraries(MediaStateT
         Qt6::Quick
         Qt6::Svg
         Qt6::Xml
+        Qt6::Charts
         )
 target_link_libraries(MediaStateT libcurl)
 target_link_libraries(MediaStateT avcodec avdevice avfilter

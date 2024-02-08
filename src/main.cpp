@@ -17,6 +17,7 @@ Acrylic acrylic;
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
+    app.setQuitOnLastWindowClosed(false); // 无窗口时不关闭
 
     qmlRegisterType<MtMediaInfo>("qt.txwh.MT_info_get", 1, 0, "MT_info_get");
 

@@ -6,7 +6,6 @@
 
 MtMediaInfo::MtMediaInfo(QObject * parent) : QObject(parent){
     neteaseMusicInfo = new Netease_Music_info;
-    fileBasicInfo = new FileBasicInformation;
     startWithSystem = new StartWithSystem;
     ne_fileSystemWatcher = new QFileSystemWatcher;
 
@@ -81,9 +80,7 @@ void MtMediaInfo::ne_file_changed(const QString & path){
     std::string copy_file_path = "./NE_history.json";
     neteaseMusicInfo->NE_Copy_InfoFile(NE_path_get(), copy_file_path);
     neteaseMusicInfo->GetInfoContent(copy_file_path);
-    printf("File changed triggered:%s\n", path.toStdString().c_str());
-    int64_t temp_time = fileBasicInfo->get_modificationTime(NE_path_get().c_str());
-    emit ne_file_time_got(QString::number(temp_time));
+    emit ne_file_time_got();
 }
 
 void MtMediaInfo::create_sws() {
@@ -119,44 +116,13 @@ void MtMediaInfo::hot_key_call_3() {
 }
 
 void MtMediaInfo::get_mouse_cursor() {
-    //参考：https://docs.microsoft.com/zh-cn/windows-hardware/manufacture/desktop/dpi-related-apis-and-registry-settings?view=windows-11
-    //https://blog.csdn.net/qq_21743659/article/details/114312564
-    POINT p;
-    GetCursorPos(&p);
-    HWND hd = GetDesktopWindow();
-    int zoom = GetDpiForWindow(hd);
-    float scale = 0;
-    switch(zoom){
-        //百分比对应DPI
-        case 96:
-            scale = 1.0;
-            break;
-        case 120:
-            scale = 1.25;
-            break;
-        case 150:
-            scale = 1.5;
-            break;
-        case 192:
-            scale = 2.0;
-            break;
-        default:
-            scale = 1;
-            break;
-    }
-
-    emit got_mouse_cursor(p.x, p.y, scale);
+    QPoint screen_pos = QCursor::pos();
+    emit got_mouse_cursor(screen_pos.x(), screen_pos.y());
 }
 
 MtMediaInfo::~MtMediaInfo(){
     delete hotkey1;
     delete hotkey2;
-    hotkey1 = nullptr;
-    hotkey2 = nullptr;
     delete neteaseMusicInfo;
-    delete fileBasicInfo;
     delete startWithSystem;
-    neteaseMusicInfo = nullptr;
-    fileBasicInfo = nullptr;
-    startWithSystem = nullptr;
 };

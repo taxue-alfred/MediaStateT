@@ -2,10 +2,17 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "MediaStateT"
-#define MyAppVersion "1.5"
+#define MyAppVersion "1.6"
 #define MyAppPublisher "TaXue"
 #define MyAppURL "https://gitee.com/MediaState/MediaStateT"
 #define MyAppExeName "MediaStateT.exe"
+
+;=======================================================================
+; Set the personal project dir, you just only edit here
+#define MyAppSourceDir ".\out"
+#define MyAppInstallerOutput ".\"
+#define MyAppInstallerIcon ".\icon\MtIcon.ico"
+;======================================================================
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -22,9 +29,9 @@ DefaultDirName={localappdata}\Programs\{#MyAppName}
 DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=admin
-OutputDir=D:\Installer
-OutputBaseFilename=MediaStateInstaller-1.5
-SetupIconFile=D:\Photography\Image\az7h7-4zv50-001.ico
+OutputDir={#MyAppInstallerOutput}
+OutputBaseFilename=MediaStateInstaller-{#MyAppVersion}
+SetupIconFile={#MyAppInstallerIcon}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -36,10 +43,11 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\Projects\PersonalProject\MediaStateT\out\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\Projects\PersonalProject\MediaStateT\out\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "D:\Projects\PersonalProject\MediaStateT\out\audio_sniffer-x64.dll"; DestDir: "{app}"; Flags: ignoreversion regserver
-;Source: "D:\Projects\PersonalProject\MediaStateT\out\audio_sniffer-x64.dll"; DestDir: "{app}"; Flags: regtypelib
+Source: "{#MyAppSourceDir}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#MyAppSourceDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs;
+; register the dll
+Source: "{#MyAppSourceDir}\audio_sniffer-x64.dll"; DestDir: "{app}"; Flags: ignoreversion regserver
+; Source: "D:\Projects\PersonalProject\MediaStateT\out\audio_sniffer-x64.dll"; DestDir: "{app}"; Flags: regtypelib
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

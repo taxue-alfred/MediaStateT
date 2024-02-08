@@ -77,26 +77,6 @@ Window{
             to: Screen.width - content_loader.width - x_offset
             duration:800
         }
-        // 大小缩放动画
-        PropertyAnimation{
-            target:pop_window
-            property: "width"
-            easing.type: Easing.OutCirc
-            //从当前值开始移动
-            from: 0
-            to: content_loader.width
-            duration:200
-        }
-        // 大小缩放动画
-        PropertyAnimation{
-            target:pop_window
-            property: "height"
-            easing.type: Easing.OutCirc
-            //从当前值开始移动
-            from: 0
-            to: content_loader.height
-            duration:200
-        }
 
         onStarted:{
             pop_window.show()
@@ -116,7 +96,7 @@ Window{
             easing.type: Easing.OutCubic
             from:pop_window.opacity
             to: 0
-            duration:800
+            duration:1500
         }
         //位置移动动画
         PropertyAnimation{
@@ -125,32 +105,13 @@ Window{
             easing.type: Easing.InExpo
             //从当前值开始移动
             from: pop_window.x
-            to: x_origin
+            to: Screen.width
             duration:800
         }
-        //大小缩放动画
-        PropertyAnimation{
-            target:pop_window
-            property: "width"
-            easing.type: Easing.InQuint
-            //从当前值开始移动
-            from: content_loader.width + 10
-            to: 0
-            duration:1000
-        }
-        //大小缩放动画
-        PropertyAnimation{
-            target:pop_window
-            property: "height"
-            easing.type: Easing.InQuint
-            //从当前值开始移动
-            from: content_loader.height + 10
-            to: 0
-            duration:1000
-        }
-        //结束动画结束之后停止定时器
+        //结束动画结束之后
         onFinished:{
             show_timer.stop()
+            pop_window.hide()
         }
     }
 

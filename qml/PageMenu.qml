@@ -25,7 +25,7 @@ Window{
 
     Timer{
         id:close_timer
-        interval:800
+        interval:1000
         repeat:true
         running:true
         onTriggered:{

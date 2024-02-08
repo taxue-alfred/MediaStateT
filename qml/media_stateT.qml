@@ -165,18 +165,13 @@ Item{
 
                 onGot_mouse_cursor:
                     //Qt6用法。qt5可忽略function
-                    function(x,y,scale){
-                        menu_right.menu_x = x / scale
-                        menu_right.menu_y = y / scale
+                    function(x,y){
+                        menu_right.menu_x = x
+                        menu_right.menu_y = y
                         menu_right.show()
                         //展现在最上层
                         menu_right.raise()
                     }
-
-                //获取网易云音乐history的修改时间函数
-                function ne_file_time(){
-                    mt_info_get.NE_file_time()
-                }
             }
 
             SystemTrayIcon{

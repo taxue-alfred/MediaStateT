@@ -10,9 +10,9 @@
 #include <windows.h>
 #include <cstdio>
 #include <QCoreApplication.h>
+#include <QCursor>
 
 #include "Netease_Music_info.h"
-#include "FileBasicInformation.h"
 #include "StartWithSystem.h"
 #include "qhotkey.h"
 #include "QFileSystemWatcher"
@@ -24,7 +24,6 @@ class MtMediaInfo : public QObject{
 
 public:
     Netease_Music_info * neteaseMusicInfo = nullptr;
-    FileBasicInformation * fileBasicInfo = nullptr;
     StartWithSystem * startWithSystem = nullptr;
     std::string playApp = "NetEaseMusic";  //默认为QQ音乐，可选NetEaseMusic
 
@@ -42,13 +41,13 @@ signals:
     void music_info_got(QString music_name);
     void player_info_got(QString player_name);
 
-    void ne_file_time_got(QString temp_time);
+    void ne_file_time_got();
 
     void autostart_status(bool value);
 
     void hot_key_activated(int value);
 
-    void got_mouse_cursor(int x, int y, float dpi);
+    void got_mouse_cursor(int x, int y);
 
 public slots:
     void img_download();
