@@ -28,7 +28,7 @@ public:
     std::string playApp = "NetEaseMusic";  //默认为QQ音乐，可选NetEaseMusic
 
 private:
-    QHotkey * hotkey1 = nullptr;
+    QHotkey * hotkey1 = nullptr;    
     QHotkey * hotkey2 = nullptr;
     QHotkey * hotkey3 = nullptr;
     QFileSystemWatcher * ne_fileSystemWatcher = nullptr;
@@ -38,36 +38,37 @@ public:
     ~MtMediaInfo();
 
 signals:
-    void music_info_got(QString music_name);
-    void player_info_got(QString player_name);
+    void sig_qml_music_info_get(QString music_name);
+    void sig_qml_player_info_get(QString player_name);
 
-    void ne_file_time_got();
+    void sig_qml_netease_file_changed();
 
-    void autostart_status(bool value);
+    void sig_qml_autostart_status(bool value);
 
-    void hot_key_activated(int value);
+    void sig_qml_hot_key_activated(int value);
 
-    void got_mouse_cursor(int x, int y);
+    void sig_qml_got_mouse_cursor(int x, int y);
 
 public slots:
-    void img_download();
-    void music_info_get();
-    void player_info_get();
+    void onQmlImgDownload();
+    void onQmlMusicInfoGet();
+    void onQmlPlayerInfoGet();
 
-    void create_sws();
-    void check_start_with_system();
-    void remove_sws();
+    //start with system function
+    void on_qml_create_sws();
+    void on_qml_check_start_with_system();
+    void on_qml_remove_sws();
 
     //热键slot
-    void hot_key_call_1();
-    void hot_key_call_2();
-    void hot_key_call_3();
+    void on_hot_key_call_1();
+    void on_hot_key_call_2();
+    void on_hot_key_call_3();
 
     //获取鼠标值
-    void get_mouse_cursor();
+    void on_qml_get_mouse_cursor();
 
 public slots:
-    void ne_file_changed(const QString & path);
+    void on_ne_file_changed(const QString & path);
 
 private:
     std::string NE_path_get();

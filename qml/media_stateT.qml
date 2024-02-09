@@ -115,21 +115,21 @@ Item{
                 //这里QT6和Qt5的Quick有些不同
                 //这样子加个function可以很明显的标识这是由emit传来的signal的参数
                 //详细链接可以参考这个： https://www.direktembedded.com/qt5-to-qt6-qml-pyside-porting/
-                onNe_file_time_got:
+                onSig_qml_netease_file_changed:
                     function(){
                         //获取信息
-                        mt_info_get.music_info_get()
-                        mt_info_get.player_info_get()
-                        mt_info_get.img_download()
+                        mt_info_get.onQmlMusicInfoGet()
+                        mt_info_get.onQmlPlayerInfoGet()
+                        mt_info_get.onQmlImgDownload()
                         //显示窗口
                         pop_window.showWindow()
                 }
 
-                onMusic_info_got:
+                onSig_qml_music_info_get:
                     function(music_name){
                         music_name_label.text = music_name
                         //重新获取图片
-                        mt_info_get.img_download()
+                        mt_info_get.onQmlImgDownload()
                         //由于QtImage存在缓存机制，需要cache：false并且先置空路径再设置路径才会加载图片，不改变路径直接调用上次的缓存
                         img.source = ""
                         img.source = "file:./album.jpg"
@@ -137,12 +137,12 @@ Item{
                         img_background.source = "file:./album.jpg"
                     }
 
-                onPlayer_info_got:
+                onSig_qml_player_info_get:
                     function(player_name){
                         player_name_label.text = player_name
                     }
 
-                onAutostart_status:
+                onSig_qml_autostart_status:
                     function(value){
                         if (value){
                             menu_right.sws.checked = true
@@ -151,7 +151,7 @@ Item{
                         }
                     }
 
-                onHot_key_activated:
+                onSig_qml_hot_key_activated:
                     function(value){
                         if(value === 1){
                             pop_window.showWindow()
@@ -163,7 +163,7 @@ Item{
                         }
                     }
 
-                onGot_mouse_cursor:
+                onSig_qml_got_mouse_cursor:
                     //Qt6用法。qt5可忽略function
                     function(x,y){
                         menu_right.menu_x = x
@@ -189,8 +189,8 @@ Item{
                             //显示窗口
                             pop_window.showWindow()
                         }else if(reason === 1){
-                            //定义过的槽函数，执行操作后，然后发射到get_mouse_cursor
-                            mt_info_get.get_mouse_cursor()
+                            //定义过的槽函数，执行操作后，然后发射到on_qml_get_mouse_cursor
+                            mt_info_get.on_qml_get_mouse_cursor()
                         }
                     }
             }
@@ -200,16 +200,16 @@ Item{
 
                 onSws_click:{
                     if(menu_right.sws.checked){
-                        mt_info_get.create_sws()
+                        mt_info_get.on_qml_create_sws()
                         // 再次进行状态检测确保添加成功
-                        mt_info_get.check_start_with_system()
+                        mt_info_get.on_qml_check_start_with_system()
                     }else{
-                        mt_info_get.remove_sws()
-                        mt_info_get.check_start_with_system()
+                        mt_info_get.on_qml_remove_sws()
+                        mt_info_get.on_qml_check_start_with_system()
                     }
                 }
 
-                Component.onCompleted: mt_info_get.check_start_with_system()
+                Component.onCompleted: mt_info_get.on_qml_check_start_with_system()
 
                 onSw_click:{
                     pop_window.showWindow()

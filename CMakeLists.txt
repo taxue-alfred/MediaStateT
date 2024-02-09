@@ -72,9 +72,9 @@ set(OTHER_FILES icon/icon_setting.rc)
 add_executable(MediaStateT
         ${SOURCE_FILES} ${RESOURCE_FILES} ${QRC_FILES} ${OTHER_FILES})
 
-set_target_properties(MediaStateT PROPERTIES
-        WIN32_EXECUTABLE TRUE
-)
+#set_target_properties(MediaStateT PROPERTIES
+#        WIN32_EXECUTABLE TRUE
+#)
 
 target_link_libraries(MediaStateT
         Qt6::Core
